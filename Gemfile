@@ -20,6 +20,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# custom
+
+gem 'lograge'
+gem 'normalize-rails'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
