@@ -2,6 +2,9 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
 
   def index
+    @tasks = Task.all.order('updated_at DESC')
+    @complete = Task.complete
+    @in_progress = Task.in_progress
   end
   
   def show
