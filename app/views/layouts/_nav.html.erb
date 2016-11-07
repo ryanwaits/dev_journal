@@ -1,45 +1,48 @@
-  <nav class="nav" style="padding: 2%;">
-    <div class="nav-left">
-      <nav class="level">
-        <!-- Left side -->
-        <div class="level-item has-text-centered">
-          <p class="heading">Total</p>
-          <p class="title">26</p>
-        </div>
-        <div class="level-item has-text-centered">
-          <p class="heading">Completed</p>
-          <p class="title">18</p>
-        </div>
-        <div class="level-item has-text-centered">
-          <p class="heading">In progress</p>
-          <p class="title">8</p>
-        </div>
-      </nav>
-    </div>
+<nav class="nav" style="padding: 2%;">
+  <% flash.each do |k, v| %>
+    <%= content_tag(:div, v, class: "flash-#{k} notification is-info") %>
+  <% end %>
+  <div class="nav-left">
+    <nav class="level">
+      <!-- Left side -->
+      <div class="level-item has-text-centered">
+        <p class="heading">Total</p>
+        <p class="title">26</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">Completed</p>
+        <p class="title">18</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">In progress</p>
+        <p class="title">8</p>
+      </div>
+    </nav>
+  </div>
 
-    <div class="nav-center">
-      <div class="nav-item level-item">
-            <p class="control has-addons">
-              <input class="input" type="text" placeholder="Find a task">
-              <button class="button">
-                Search
-              </button>
-            </p>
-          </div>
-    </div>
+  <div class="nav-center">
+    <div class="nav-item level-item">
+          <p class="control has-addons">
+            <input class="input" type="text" placeholder="Find a task">
+            <button class="button">
+              Search
+            </button>
+          </p>
+        </div>
+  </div>
 
 <!--     <span class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span> -->
+    <span></span>
+    <span></span>
+    <span></span>
+  </span> -->
 
-    <div class="nav-right nav-menu">
-      <div class="nav-item level-right">
-          <p class="level-item"><%= link_to 'All', dashboard_path %></p>
-          <p class="level-item"><a>Published</a></p>
-          <p class="level-item"><a>Completed</a></p>
-          <p class="level-item"><%= link_to 'New', new_task_path, class: 'button is-primary' %></p>
-        </div>
-    </div>
-  </nav>
+  <div class="nav-right nav-menu">
+    <div class="nav-item level-right">
+        <p class="level-item"><%= link_to 'All', dashboard_path %></p>
+        <p class="level-item"><a>Published</a></p>
+        <p class="level-item"><a>Completed</a></p>
+        <p class="level-item"><%= link_to 'New', new_task_path, class: 'button is-primary' %></p>
+      </div>
+  </div>
+</nav>
