@@ -1,73 +1,25 @@
-<div class="column is-one-third has-text-centered">
-          <div class="box">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>Add multi-user authentication</strong><br><small>updated 31m ago</small>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-                  </p>
-                </div>
-                <nav class="level">
-                  <div class="level-left">
-                    <a class="level-item">
-                      <span class="tag is-dark">Dark</span>
-                      <span class="tag is-primary">Primary</span>
-                      <span class="tag is-info">Info</span>
-                      <span class="tag is-success">Success</span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
-            </article>
+<% @tasks.first(3).each do |task| %>
+  <div class="column is-one-third has-text-centered">
+  <%= link_to task_path(task) do %>
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong><%= task.name %></strong><br><small>updated <%= time_ago_in_words(task.updated_at) %> ago</small>
+            </p>
           </div>
+          <nav class="level">
+            <div class="level-left">
+              <a class="level-item">
+                <span class="tag is-info">Level <%= task.level %></span>
+                <span class="tag is-warning"><%= 'In progress' if task.in_progress %></span>
+              </a>
+            </div>
+          </nav>
         </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="box">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>Send an email confirmation upon valid sign up</strong><br><small>updated 1d ago</small>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-                  </p>
-                </div>
-                <nav class="level">
-                  <div class="level-left">
-                    <a class="level-item">
-                      <span class="tag is-dark">Dark</span>
-                      <span class="tag is-primary">Primary</span>
-                      <span class="tag is-info">Info</span>
-                      <span class="tag is-success">Success</span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <div class="box">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>Add validations to nested model attributes</strong><br><small>updated 3d ago</small>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-                  </p>
-                </div>
-                <nav class="level">
-                  <div class="level-left">
-                    <a class="level-item">
-                      <span class="tag is-dark">Dark</span>
-                      <span class="tag is-primary">Primary</span>
-                      <span class="tag is-info">Info</span>
-                      <span class="tag is-success">Success</span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </div>
+      </article>
+    </div>
+  <% end %>
+  </div>
+<% end %>
