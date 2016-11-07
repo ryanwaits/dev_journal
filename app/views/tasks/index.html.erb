@@ -13,29 +13,14 @@
 
 <div class="container" style="margin: 5% 5%;">
   <div class="columns is-multiline">
-    <div class="column is-8">
-      <div class="content">
-        <p class="task title">Add the ability to search for a post by hashtag attribute</p>
-        <p class="task subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-        </p>
+    <% @tasks.each_with_index do |task, i| %>
+      <div class="column is-8" style="margin-top: 2.5%;">
+        <div class="content">
+          <p class="task title"><%= link_to "#{i+=1}. #{task.name}", task_path(task) %></p>
+        </div>
+        <span class="tag is-info">Level <%= task.level %></span>
+        <span class="tag is-warning"><%= 'In progress' if task.in_progress %></span>
       </div>
-      <span class="tag is-dark">Dark</span>
-      <span class="tag is-primary">Primary</span>
-      <span class="tag is-info">Info</span>
-      <span class="tag is-success">Success</span>
-    </div>
-    <div class="column is-8">
-      <div class="content">
-        <p class="task title">Ajax call to update like count for a post</p>
-        <p class="task subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-        </p>
-      </div>
-      <span class="tag is-dark">Dark</span>
-      <span class="tag is-primary">Primary</span>
-      <span class="tag is-info">Info</span>
-      <span class="tag is-success">Success</span>
-    </div>
+    <% end %>
   </div>
 </div>
