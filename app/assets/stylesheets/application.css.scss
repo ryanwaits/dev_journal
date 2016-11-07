@@ -27,7 +27,6 @@ html, body, .hero {
 input {
   font-family: 'Work Sans'; font-weight: 400;
 }
-
 h1.title {
   font-family: 'Work Sans';
   font-size: 65px;
@@ -41,6 +40,9 @@ div.level-item {
 p.task.title {
   font-family: 'Work Sans'; font-weight: bold;
   font-size: 18px;
+}
+p.task.title a:visited {
+  color: rgba(51, 51, 51, 0.7);
 }
 p.task.subtitle {
   font-family: 'Work Sans'; font-weight: 400;
