@@ -10,6 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/nav' %>
+      <%= yield %>
+      <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
