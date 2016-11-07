@@ -7,15 +7,15 @@
       <!-- Left side -->
       <div class="level-item has-text-centered">
         <p class="heading">Total</p>
-        <p class="title">26</p>
+        <p class="title"><%= @tasks.count %></p>
       </div>
       <div class="level-item has-text-centered">
         <p class="heading">Completed</p>
-        <p class="title">18</p>
+        <p class="title"><%= @complete.count %></p>
       </div>
       <div class="level-item has-text-centered">
         <p class="heading">In progress</p>
-        <p class="title">8</p>
+        <p class="title"><%= @in_progress.count %></p>
       </div>
     </nav>
   </div>
