@@ -1,18 +1,15 @@
-<section class="hero is-medium">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-two-thirds">
-          <%= form_for :part, url: parts_path do |f| %>
-            <p class="control">
-              <%= f.select :description, class: 'task input is-large',placeholder: 'Description' %>
-            </p>
-            <p class="control">
-              <%= f.submit 'Add part', class: 'button is-large' %>
-            </p>
-          <% end%>
-        </div>
-      </div>
-    </div>
+<div class="columns">
+  <div class="column is-two-thirds">
+    <%= form_for :part, url: task_parts_path(@task) do |f| %>
+      <p class="control">
+        <%= f.text_field :description, class: 'input', placeholder: 'Description' %>
+      </p>
+      <p class="control">
+        <%= f.text_field :estimate, class: 'input', placeholder: 'Estimated time (in minutes)' %>
+      </p>
+      <p class="control">
+        <%= f.submit 'Add step', class: 'button tag is-primary' %>
+      </p>
+    <% end%>
   </div>
-</section>
+</div>
