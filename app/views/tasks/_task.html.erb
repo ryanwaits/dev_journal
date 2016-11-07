@@ -1,0 +1,24 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <p class="control">
+            <span class="select is-medium">
+              <select>
+                <option>Task level</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </span>
+          </p>
+          <p class="control">
+            <input class="task input is-large" type="text" placeholder="Description">
+          </p>
+          <%= link_to 'Create task', new_task_path, class: 'button is-large' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
