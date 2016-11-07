@@ -3,20 +3,17 @@
     <div class="container">
       <div class="columns">
         <div class="column is-two-thirds">
-          <p class="control">
-            <span class="select is-medium">
-              <select>
-                <option>Task level</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </span>
-          </p>
-          <p class="control">
-            <input class="task input is-large" type="text" placeholder="Description">
-          </p>
-          <%= link_to 'Create task', new_task_path, class: 'button is-large' %>
+          <%= form_for :task, url: tasks_path do |f| %>
+            <p class="control">
+              <%= f.select :level, options_for_select([1, 2, 3]), {prompt: 'Level'}, class: 'select is-medium' %>
+            </p>
+            <p class="control">
+              <%= f.text_field :name, class: 'task input is-large', placeholder: 'Description' %>
+            </p>
+            <p class="control">
+              <%= f.submit 'Create task', class: 'button is-large' %>
+            </p>
+          <% end%>
         </div>
       </div>
     </div>
