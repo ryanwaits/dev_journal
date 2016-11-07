@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
-
+  has_many :parts
+  
   def self.complete
     Task.where(done: true)
   end
