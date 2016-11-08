@@ -1,0 +1,30 @@
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns" style="display: flex; justify-content: center;">
+        <div class="column is-half" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h2 class="subtitle">
+            <span><%= @part.updated_at.strftime('%B %d %Y') %></span>
+          </h2>
+          <h1 class="subtitle" style="font-weight: bold;">
+            <%= @part.description %>
+          </h1>
+          <div class="meta" style="margin-bottom: 5%;">
+            <span class="tag is-warning">estimate <%= @part.estimate %>m</span>
+            <span class="tag is-primary">priority <%= @part.priority %></span>
+          </div>
+          <%= form_for @part do |f| %>
+            <div class="column is-4">
+              <p class="control">
+                <%= f.text_field :actual, class: 'input', placeholder: 'Actual time (min)' %>
+              </p>
+              <p class="control">
+                <%= f.submit 'Mark as done', class: 'button tag is-info' %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
