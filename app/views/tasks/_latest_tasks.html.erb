@@ -1,4 +1,4 @@
-<% @tasks.first(3).each do |task| %>
+<% @tasks.latest.each do |task| %>
   <div class="column is-one-third has-text-centered">
   <%= link_to task_path(task) do %>
     <div class="box">

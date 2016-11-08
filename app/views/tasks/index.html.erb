@@ -13,7 +13,7 @@
 
 <div class="container" style="margin: 5% 5%;">
   <div class="columns is-multiline">
-    <% @tasks.each_with_index do |task, i| %>
+    <% Task.by_level.each_with_index do |task, i| %>
       <div class="column is-8" style="margin-top: 2.5%;">
         <div class="content">
           <p class="task title"><%= link_to "#{i+=1}. #{task.name}", task_path(task) %></p>
