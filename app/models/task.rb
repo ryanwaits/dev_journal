@@ -10,11 +10,11 @@ class Task < ApplicationRecord
   end
 
   def self.latest
-    self.order('updated_at DESC').limit(3)
+    self.where(done: false).order('updated_at DESC').limit(3)
   end
 
   def self.by_level
-    self.order('level ASC')
+    self.where(done: false).order('level ASC')
   end
 
   def parts_completed?
