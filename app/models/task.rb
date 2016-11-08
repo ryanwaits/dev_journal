@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_many :parts
+  has_many :parts, dependent: :destroy
 
   def parts_completed?
     self.parts.where(done: false).empty?
