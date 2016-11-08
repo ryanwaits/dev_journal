@@ -2,10 +2,13 @@
   <div class="column is-two-thirds">
     <%= form_for :part, url: task_parts_path(@task) do |f| %>
       <p class="control">
-        <%= f.text_field :description, class: 'input', placeholder: 'Description' %>
+        <%= f.text_field :description, class: 'input', placeholder: 'Add a step' %>
       </p>
       <p class="control">
         <%= f.text_field :estimate, class: 'input', placeholder: 'Estimated time (in minutes)' %>
+      </p>
+      <p class="control">
+        <%= f.select :priority, options_for_select([1, 2, 3]), {prompt: 'Priority'}, class: 'select is-medium'%>
       </p>
       <p class="control">
         <%= f.submit 'Add step', class: 'button tag is-primary' %>
