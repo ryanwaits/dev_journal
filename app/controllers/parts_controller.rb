@@ -20,9 +20,15 @@ class PartsController < ApplicationController
   end
 
   def update
+    @task = @part.task
     @part.update(part_params.merge!(done: true))
     if @part.save
       redirect_to @part.task
+      if @task.parts_completed?
+        @task.done = true
+        @task.in_progress = false
+        @task.save
+      end
     else
       render :show
     end
