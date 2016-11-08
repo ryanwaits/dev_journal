@@ -2,7 +2,10 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns">
-        <div class="column is-two-thirds">
+        <div class="column is-fullwidth" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h1 class="subtitle" style="font-weight: bold;">
+            Create a task
+          </h1>
           <%= form_for :task, url: tasks_path do |f| %>
             <p class="control">
               <%= f.select :level, options_for_select([1, 2, 3]), {prompt: 'Level'}, class: 'select is-medium' %>
