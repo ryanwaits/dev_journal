@@ -1,29 +1,29 @@
 <% @tasks.latest.each do |task| %>
   <div class="column is-one-third has-text-centered">
-  <%= link_to task_path(task) do %>
-    <div class="box">
-      <article class="media">
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong><%= task.name %></strong><br><small>updated <%= time_ago_in_words(task.updated_at) %> ago</small>
-            </p>
-          </div>
-          <nav class="level">
-            <div class="level-right">
-              <a class="level-item">
-                <span class="tag is-info">Level <%= task.level %></span>
-                <% if task.complete? %>
-                  <span class="tag is-success">Complete</span>
-                  <% else %>
-                  <span class="tag is-warning">In Progress</span>
-                <% end %>
-              </a>
+    <%= link_to task_path(task) do %>
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong><%= task.name %></strong><br><small>updated <%= time_ago_in_words(task.updated_at) %> ago</small>
+              </p>
             </div>
-          </nav>
-        </div>
-      </article>
-    </div>
-  <% end %>
+            <nav class="level">
+              <div class="level-right">
+                <a class="level-item">
+                  <span class="tag is-info">Level <%= task.level %></span>
+                  <% if task.complete? %>
+                    <span class="tag is-success">Complete</span>
+                    <% else %>
+                    <span class="tag is-warning">In Progress</span>
+                  <% end %>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+    <% end %>
   </div>
 <% end %>
