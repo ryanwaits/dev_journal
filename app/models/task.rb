@@ -17,4 +17,8 @@ class Task < ApplicationRecord
     self.order('level ASC')
   end
 
+  def parts_completed?
+    self.parts.where(done: false).empty?
+  end
+
 end
