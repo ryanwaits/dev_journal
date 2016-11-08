@@ -1,3 +1,5 @@
+<% unless @task.done? %>
+
 <section class="hero is-medium">
   <div class="hero-body">
     <div class="container">
@@ -33,3 +35,50 @@
     </div>
   </div>
 </section>
+
+<% else %>
+
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h2 class="subtitle">
+            <span><%= @task.updated_at.strftime('%B %d %Y') %></span>
+          </h2>
+          <h1 class="subtitle" style="font-weight: bold;">
+            <%= @task.name %>
+          </h1>
+          <div class="meta" style="margin-bottom: 5%;">
+            <span class="tag is-success">Completed</span>
+          </div>
+          <div class="content">
+            <% @task.parts.each_with_index do |part, i| %>
+              <p><%= i +=1 %>. <%= part.description %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="column is-two-third" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h1 class="subtitle" style="font-weight: bold;">
+            Reflection time
+          </h1>
+          <div class="meta" style="margin-bottom: 5%;">
+            <span class="tag is-danger">Independent</span>
+            <span class="tag is-dark">Consistent</span>
+            <span class="tag is-info">Trusted</span>
+          </div>
+          <div class="content">
+            <p class="control">
+              <%= form_for :part, url: task_part_path(@task), method: :put do |f| %>
+                <%= f.text_field :reflection, class: 'textarea', style: 'margin-bottom: 2%' %>
+                <%= f.submit 'Add a note', class: 'button' %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%  end %>
