@@ -22,13 +22,13 @@
 
   <div class="nav-center">
     <div class="nav-item level-item">
-          <p class="control has-addons">
-            <input class="input" type="text" placeholder="Find a task">
-            <button class="button">
-              Search
-            </button>
-          </p>
-        </div>
+      <p class="control">
+        <%= form_tag dashboard_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: 'input', placeholder: 'Find a task' %>
+          <%= submit_tag 'Search', name: nil %>
+        <% end %>
+      </p>
+    </div>
   </div>
 
 <!--     <span class="nav-toggle">
