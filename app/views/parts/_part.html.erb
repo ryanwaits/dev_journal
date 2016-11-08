@@ -11,6 +11,7 @@
         <%= f.select :priority, options_for_select([1, 2, 3]), {prompt: 'Priority'}, class: 'select is-medium'%>
       </p>
       <p class="control">
+        <%= link_to 'Back', dashboard_path, class: 'button tag is-info' %>
         <%= f.submit 'Add step', class: 'button tag is-primary' %>
       </p>
     <% end%>
