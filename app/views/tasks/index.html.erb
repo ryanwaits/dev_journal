@@ -19,7 +19,7 @@
           <p class="task title"><%= link_to "#{i+=1}. #{task.name}", task_path(task) %></p>
         </div>
         <span class="tag is-info">Level <%= task.level %></span>
-        <span class="tag is-warning"><%= 'In progress' if task.in_progress %></span>
+        <span class="tag is-warning">In progress</span>
       </div>
     <% end %>
   </div>
