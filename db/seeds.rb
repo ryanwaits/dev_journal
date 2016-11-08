@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Task.destroy_all
+
 Task.create!([
 
   { name: 'Send an email confirmation upon valid sign up', level: 2 },
   { name: 'Add validations to nested model attributes', level: 1 },
   { name: 'Ajax call to update like count for a post', level: 3 },
-  { name: 'Add the ability to search for a post by hashtag', level: 2, done: true, in_progress: false },
+  { name: 'Add the ability to search for a post by hashtag', level: 2},
   { name: 'Add multi-user authentication', level: 2 }
 
   ])
