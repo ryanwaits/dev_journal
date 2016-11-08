@@ -70,7 +70,7 @@
           <div class="content">
             <p class="control">
               <%= form_for :part, url: task_part_path(@task), method: :put do |f| %>
-                <%= f.text_field :reflection, class: 'textarea', style: 'margin-bottom: 2%' %>
+                <%= f.text_field :reflection, class: 'textarea', style: 'margin-bottom: 2%', placeholder: '' %>
                 <%= f.submit 'Add a note', class: 'button' %>
               <% end %>
             </p>
