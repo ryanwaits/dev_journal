@@ -13,7 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 /public
-Gemfile.lock
 .DS_Store
 
 # Ignore Byebug command history file.
