@@ -13,7 +13,11 @@
             <div class="level-right">
               <a class="level-item">
                 <span class="tag is-info">Level <%= task.level %></span>
-                <span class="tag is-warning"><%= 'In progress' if task.in_progress %></span>
+                <% if task.complete? %>
+                  <span class="tag is-success">Complete</span>
+                  <% else %>
+                  <span class="tag is-warning">In Progress</span>
+                <% end %>
               </a>
             </div>
           </nav>
