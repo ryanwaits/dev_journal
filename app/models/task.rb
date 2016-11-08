@@ -2,10 +2,19 @@ class Task < ApplicationRecord
   has_many :parts
   
   def self.complete
-    Task.where(done: true)
+    self.where(done: true)
   end
   
   def self.in_progress
-    Task.where(in_progress: true)
+    self.where(in_progress: true)
   end
+
+  def self.latest
+    self.order('updated_at DESC').limit(3)
+  end
+
+  def self.by_level
+    self.order('level ASC')
+  end
+
 end
