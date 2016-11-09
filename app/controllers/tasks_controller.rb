@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only: [:index]
 
   def index
     @tasks = Task.all
@@ -28,6 +29,10 @@ class TasksController < ApplicationController
 
   def find_task
     @task = Task.find(params[:id])
+  end
+
+  def logged_in?
+    redirect_to login_path unless current_user
   end
 
   def task_params
