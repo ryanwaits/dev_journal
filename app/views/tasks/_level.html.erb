@@ -1,0 +1,13 @@
+<% @tasks.by_level.each_with_index do |task, i| %>
+  <div class="column is-8" style="margin-top: 2.5%;">
+    <div class="content">
+      <p class="task title"><%= link_to "#{i+=1}. #{task.name}", task_path(task) %></p>
+    </div>
+    <span class="tag is-info">Level <%= task.level %></span>
+    <% if task.complete? %>
+      <span class="tag is-success">Complete</span>
+      <% else %>
+      <span class="tag is-warning">In Progress</span>
+    <% end %>
+  </div>
+<% end %>
