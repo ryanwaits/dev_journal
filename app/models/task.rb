@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+  belongs_to :user
   has_many :parts, dependent: :destroy
 
   def parts_completed?
