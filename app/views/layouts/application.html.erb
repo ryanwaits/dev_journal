@@ -11,7 +11,7 @@
 
   <body>
     <% unless current_page?(root_path) %>
-      <%= render 'layouts/nav' %>
+      <%= render 'partials/nav' %>
       <%= yield %>
       <% else %>
       <%= yield %>
