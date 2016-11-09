@@ -3,9 +3,9 @@ class TasksController < ApplicationController
   before_action :logged_in?, only: [:index]
 
   def index
-    @tasks = Task.all
-    @complete = Task.complete
-    @in_progress = Task.in_progress
+    @tasks = current_user.tasks
+    @complete = current_user.tasks.complete
+    @in_progress = current_user.tasks.in_progress
   end
   
   def show
