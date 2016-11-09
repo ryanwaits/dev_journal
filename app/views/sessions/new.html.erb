@@ -1,2 +1,24 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-fullwidth" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h1 class="subtitle" style="font-weight: bold;">
+            Log in
+          </h1>
+          <%= form_for :session, url: sessions_path do |f| %>
+            <p class="control">
+              <%= f.text_field :username, class: 'input is-medium', placeholder: 'Username' %>
+            </p>
+            <p class="control">
+              <%= f.password_field :password, class: 'input is-medium', placeholder: 'Password' %>
+            </p>
+            <p class="control">
+              <%= f.submit 'Create task', class: 'button is-large' %>
+            </p>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
