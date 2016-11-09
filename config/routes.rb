@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/dashboard' => 'tasks#index', as: 'dashboard'
 
-  resources :users, only: [:new, :show, :create]
+  get 'signup' => 'users#new', as: 'signup'
+  resources :users, only: [:create]
+  resources :sessions, only: [:create]
   resources :tasks, except: [:index] do
     resources :parts
   end
