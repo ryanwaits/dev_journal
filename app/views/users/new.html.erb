@@ -1,0 +1,33 @@
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-fullwidth" style="background: #fff; padding: 5%; border: 2px solid rgba(0, 0, 0, 0.1); margin: 2.5%;">
+          <h1 class="subtitle" style="font-weight: bold;">
+            Sign up
+          </h1>
+          <%= form_for :user, url: users_path do |f| %>
+            <p class="control">
+              <%= f.text_field :first_name, class: 'input is-medium', placeholder: 'First name' %>
+            </p>
+            <p class="control">
+              <%= f.text_field :last_name, class: 'input is-medium', placeholder: 'Last name' %>
+            </p>
+            <p class="control">
+              <%= f.text_field :username, class: 'input is-medium', placeholder: 'Username' %>
+            </p>
+            <p class="control">
+              <%= f.text_field :email, class: 'input is-medium', placeholder: 'Email' %>
+            </p>
+            <p class="control">
+              <%= f.password_field :password, class: 'input is-medium', placeholder: 'Password' %>
+            </p>
+            <p class="control">
+              <%= f.submit 'Create task', class: 'button is-large' %>
+            </p>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
