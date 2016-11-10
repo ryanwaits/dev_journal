@@ -3,21 +3,7 @@
     <%= content_tag(:div, v, class: "flash-#{k} notification is-info") %>
   <% end %>
   <div class="nav-left">
-    <nav class="level">
-      <!-- Left side -->
-      <div class="level-item has-text-centered">
-        <p class="heading">Total</p>
-        <p class="title"><%= Task.all.count %></p>
-      </div>
-      <div class="level-item has-text-centered">
-        <p class="heading">Completed</p>
-        <p class="title"><%= Task.complete.count %></p>
-      </div>
-      <div class="level-item has-text-centered">
-        <p class="heading">In progress</p>
-        <p class="title"><%= Task.in_progress.count %></p>
-      </div>
-    </nav>
+    <%= render 'partials/stats' %>
   </div>
 
   <div class="nav-right nav-menu">
