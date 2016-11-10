@@ -7,14 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Task.destroy_all
+User.destroy_all
+
+User.create!({first_name: "Ryan", last_name: "Waits", email: "ryan.waits@gmail.com", username: "ryanwaits", password: '12345'})
 
 Task.create!([
 
-  { name: 'Send an email confirmation upon valid sign up', level: 2 },
-  { name: 'Add validations to nested model attributes', level: 1 },
-  { name: 'Ajax call to update like count for a post', level: 3 },
-  { name: 'Add the ability to search for a post by hashtag', level: 2},
-  { name: 'Add multi-user authentication', level: 2 }
+  { name: 'Send an email confirmation upon valid sign up', level: 2, user_id: User.first.id },
+  { name: 'Add validations to nested model attributes', level: 1, user_id: User.first.id },
+  { name: 'Ajax call to update like count for a post', level: 3, user_id: User.first.id },
+  { name: 'Add the ability to search for a post by hashtag', level: 2, user_id: User.first.id },
+  { name: 'Add multi-user authentication', level: 2, user_id: User.first.id }
 
   ])
 
