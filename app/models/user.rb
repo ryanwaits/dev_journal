@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :tasks
 
   def generate_auth_token
-    self.auth_token = SecureRandom.base64(64)
+    self.auth_token = SecureRandom.hex
   end
 
 end
