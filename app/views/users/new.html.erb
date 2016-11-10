@@ -23,9 +23,12 @@
               <%= f.password_field :password, class: 'input is-medium', placeholder: 'Password' %>
             </p>
             <p class="control">
-              <%= f.submit 'Sign up', class: 'button is-large' %>
+              <%= f.submit 'Sign up', class: 'button is-large is-primary' %>
             </p>
           <% end%>
+          <p class="control" style="margin-top: 2.5%;">
+            <%= link_to 'Already have an account? Login', login_path %>
+          </p>
         </div>
       </div>
     </div>
