@@ -12,16 +12,16 @@ class TasksController < ApplicationController
   end
   
   def new
+    @task = Task.new
   end
 
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
+      flash[:success] = "Task created"
       redirect_to dashboard_path
-      flash[:notice] = 'Task created!'
     else
       render :new
-      flash[:error] = 'Unable to create task'
     end
   end
 

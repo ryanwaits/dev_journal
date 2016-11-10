@@ -12,6 +12,7 @@ class PartsController < ApplicationController
     @task = Task.find(params[:task_id])
     @part = @task.parts.build(part_params)
     if @part.save
+      flash[:success] = 'Part created'
       redirect_to task_path(@task)
     end
   end
@@ -23,8 +24,10 @@ class PartsController < ApplicationController
     @task = @part.task
     @part.update(part_params.merge!(done: true))
     if @part.save
+      flash[:success] = 'Part updated'
       redirect_to @part.task
       if @task.parts_completed?
+        flash[:success] = 'Task complete'
         @task.done = true
         @task.in_progress = false
         @task.save

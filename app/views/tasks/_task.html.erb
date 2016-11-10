@@ -6,7 +6,17 @@
           <h1 class="subtitle" style="font-weight: bold;">
             Create a task
           </h1>
-          <%= form_for :task, url: tasks_path do |f| %>
+          <%= form_for @task, url: tasks_path do |f| %>
+
+            <!-- Check errors -->
+              <% if @task.errors.any? %>
+                <h1 class="subtitle" style="font-weight: bold;"><%= pluralize(@task.errors.count, 'error') %></h1>
+                <% @task.errors.full_messages.each do |message| %>
+                  <p class="control"><%= message %></p>
+                <% end %>
+              <% end %>
+            <!-- /errors -->
+
             <p class="control">
               <%= f.select :level, options_for_select([1, 2, 3]), {prompt: 'Level'}, class: 'select is-medium' %>
             </p>

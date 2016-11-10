@@ -6,7 +6,17 @@
           <h1 class="subtitle" style="font-weight: bold;">
             Sign up
           </h1>
-          <%= form_for :user, url: users_path do |f| %>
+          <%= form_for @user, url: users_path do |f| %>
+
+            <!-- Check errors -->
+            <% if @user.errors.any? %>
+              <h1 class="subtitle" style="font-weight: bold;"><%= pluralize(@user.errors.count, 'error')%></h1>
+              <% @user.errors.full_messages.each do |message| %>
+                <p class="control"><%= message %></p>
+              <% end %>
+            <% end %>
+            <!-- /errors -->
+
             <p class="control">
               <%= f.text_field :first_name, class: 'input is-medium', placeholder: 'First name' %>
             </p>
