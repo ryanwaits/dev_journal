@@ -13,5 +13,13 @@ Rails.application.routes.draw do
   end
   resources :parts, only: [:show, :update]
 
+  # api routes
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:show]
+      resources :tasks, only: [:index, :show]
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
