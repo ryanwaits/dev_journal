@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'me' => 'users#show', as: 'me'
       resources :sessions, only: [:create, :destroy]
-      resources :tasks, only: [:index, :show]
+      resources :tasks, only: [:index, :show, :create]
       resources :tasks do
         resources :parts, only: [:index, :show]
       end
