@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create, :destroy]
       resources :tasks, only: [:index, :show, :create]
       resources :tasks do
-        resources :parts, only: [:index, :show]
+        resources :parts, only: [:index, :show, :create]
       end
     end
   end
