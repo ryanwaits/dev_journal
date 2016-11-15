@@ -21,11 +21,13 @@ class PartsController < ApplicationController
   end
 
   def update
+    # find the parts task
     @task = @part.task
     @part.update(part_params.merge!(done: true))
     if @part.save
       flash[:success] = 'Part updated'
       redirect_to @part.task
+      # if all the parts of the task are completed, change the state of the task to complete
       if @task.parts_completed?
         flash[:success] = 'Task complete'
         @task.done = true
